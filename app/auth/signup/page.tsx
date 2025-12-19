@@ -1,4 +1,7 @@
-import { Button, Link, Stack, TextField, Typography } from "@mui/material";
+"use client";
+
+import { Stack, Typography } from "@mui/material";
+import SignUpForm from "@/app/modules/signup/components/SignUpForm";
 
 export default function SignupPage() {
     return (
@@ -6,12 +9,7 @@ export default function SignupPage() {
             <Typography variant="h1" color="text.primary">
                 Signup
             </Typography>
-            <TextField label="Email" variant="outlined" type="email" />
-            <TextField label="Password" variant="outlined" type="password" />
-            <Button variant="contained" color="primary">Signup</Button>
-            <Typography variant="body2" color="text.secondary">
-                Already have an account? <Link href="/auth/login">Login</Link>
-            </Typography>
+            <SignUpForm />
         </Stack>
     );
 }
