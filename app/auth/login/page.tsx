@@ -1,4 +1,6 @@
-import { Button, Link, Stack, TextField, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
+import Login from "../../modules/login/components/Login";
+
 
 export default function LoginPage() {
     return (
@@ -6,12 +8,7 @@ export default function LoginPage() {
             <Typography variant="h1" color="text.primary">
                 Login
             </Typography>
-            <TextField label="Email" variant="outlined" type="email" />
-            <TextField label="Password" variant="outlined" type="password" />
-            <Button variant="contained" color="primary">Login</Button>
-            <Typography variant="body2" color="text.secondary">
-                Don't have an account? <Link href="/auth/signup">Sign up</Link>
-            </Typography>
+            <Login />
         </Stack>
     );
 }

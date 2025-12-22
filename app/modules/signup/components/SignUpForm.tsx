@@ -2,10 +2,14 @@
 import { Button, Link, TextField, Typography } from "@mui/material";
 import createUser from "../api/get/createUser";
 import { useActionState } from "react";
+import { formatErrorForDisplay } from "../../../utils/error";
 
+/**
+ * Sign up form component
+ */
 export default function SignUpForm() {
-    const [state, formAction] = useActionState(createUser, { error: '' });
-    console.log(state)
+    const [state, formAction] = useActionState(createUser, { error: null });
+
     return (
         <form className="flex flex-col gap-2" action={formAction}>
             <TextField name="email" id="email" label="Email" variant="outlined" type="email" />
@@ -16,9 +20,9 @@ export default function SignUpForm() {
             </Typography>
             {state.error && (
                 <Typography variant="body2" color="error">
-                    {state.error.statusCode} {state.error.error}: {Array.isArray(state.error.message) ? state.error.message.join(', ') : state.error.message}
+                    {formatErrorForDisplay(state.error)}
                 </Typography>
             )}
         </form>
-    )
+    );
 }
