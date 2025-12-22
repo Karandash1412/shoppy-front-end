@@ -2,7 +2,7 @@
 import { Button, Link, TextField, Typography } from "@mui/material";
 import createUser from "../api/get/createUser";
 import { useActionState } from "react";
-import { formatErrorForDisplay } from "../../../utils/error";
+import { formatErrorForDisplay } from "../../../constants/utils/error";
 
 /**
  * Sign up form component

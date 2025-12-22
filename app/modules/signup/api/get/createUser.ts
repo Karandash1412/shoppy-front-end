@@ -1,6 +1,6 @@
 "use server";
 import { redirect } from "next/navigation";
-import { post } from "./fetch";
+import { post } from "../../../../constants/api/fetch";
 
 /**
  * Server action to create a new user
