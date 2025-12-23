@@ -37,11 +37,12 @@ export const post = async (path: string, formData: FormData) => {
     return { error: null };
 }
 
-export const get = async (path: string) => {
+export const get = async (path: string, tag?: string) => {
     const headers = await getHeaders();
     const response = await fetch(`${process.env.API_URL}/${path}`, {
         headers,
         method: 'GET',
+        next: { tags: [`${tag}`] }
     });
 
     return await response.json();
